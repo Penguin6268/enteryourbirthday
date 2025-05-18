@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+    }
+    .message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Your Birthday</h2>
+    <input type="date" id="birthdayInput" />
+    <button onclick="checkBirthday()">Submit</button>
+    <div class="message" id="responseMessage"></div>
+  </div>
+
+  <script>
+    function checkBirthday() {
+      const birthday = document.getElementById("birthdayInput").value;
+      const messageEl = document.getElementById("responseMessage");
+
+      if (birthday) {
+        messageEl.textContent = "This birthday is in use.";
+      } else {
+        messageEl.textContent = "Please enter a valid date.";
+      }
+    }
+  </script>
+</body>
+</html>
